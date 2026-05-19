@@ -24,34 +24,34 @@ const Academy = () => {
 
     return (
         <div className="bg-base-white min-h-screen text-charcoal-800">
-            {/* ─── Hero ─── */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            {/* ─── Hero（PC: md以上） ─── */}
+            <section className="hidden md:flex relative min-h-screen items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-charcoal-900/70 via-charcoal-800/50 to-charcoal-900/60 z-10"></div>
                 <div className="absolute inset-0">
                     <div className="w-full h-full bg-[url('/images/academy-hero-composite.jpg')] bg-cover bg-center"></div>
                 </div>
 
-                <div className="relative z-20 text-center px-4 md:px-6 max-w-4xl mx-auto pt-24">
+                <div className="relative z-20 text-center px-6 max-w-4xl mx-auto pt-24">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <div className="bg-white rounded-xl md:rounded-2xl inline-block px-3 py-2 md:px-6 md:py-4 mb-4 border border-gold-200 shadow-lg">
+                        <div className="bg-white rounded-2xl inline-block px-6 py-4 mb-4 border border-gold-200 shadow-lg">
                             <img
                                 src="/logos/maki-salon-logo.png"
                                 alt="DETOX SALON MAKI ロゴ"
-                                className="h-14 sm:h-20 md:h-36 w-auto"
+                                className="h-36 w-auto"
                             />
                         </div>
-                        <span className="inline-block bg-cream-100 border border-gold-300 text-gold-700 text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-6 sm:mb-8">
+                        <span className="inline-block bg-cream-100 border border-gold-300 text-gold-700 text-xs tracking-[0.3em] px-4 py-2 rounded-full mb-8">
                             MAKI ACADEMY
                         </span>
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-serif text-white mb-6 md:mb-8 tracking-[0.04em] sm:tracking-[0.1em] md:tracking-[0.15em] leading-tight whitespace-pre-line drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                        <h1 className="text-5xl lg:text-6xl font-serif text-white mb-8 tracking-[0.15em] leading-tight whitespace-pre-line drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                             {hero.catchcopy}
                         </h1>
-                        <div className="w-20 md:w-24 h-[2px] bg-gradient-to-r from-gold-500 via-ice-400 to-gold-500 mx-auto my-6 md:my-8"></div>
-                        <p className="text-sm sm:text-base md:text-lg text-white/90 font-light tracking-wider md:tracking-widest max-w-2xl mx-auto leading-relaxed md:leading-loose whitespace-pre-line drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                        <div className="w-24 h-[2px] bg-gradient-to-r from-gold-500 via-ice-400 to-gold-500 mx-auto my-8"></div>
+                        <p className="text-lg text-white/90 font-light tracking-widest max-w-2xl mx-auto leading-loose whitespace-pre-line drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
                             {hero.subcopy}
                         </p>
                     </motion.div>
@@ -61,6 +61,55 @@ const Academy = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
                         className="mt-12"
+                    >
+                        <CTAButton href={hero.ctaLink} text={hero.ctaText} variant="outline" />
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* ─── Hero（モバイル: md未満） ─── */}
+            <section className="md:hidden flex flex-col overflow-hidden">
+                {/* 画像: header_academy_mobile.png を全体表示 */}
+                <div className="relative w-full pt-10">
+                    <div className="absolute inset-0 bg-charcoal-900/25 z-10"></div>
+                    <img
+                        src="/images/header_academy_mobile.png"
+                        alt="MAKI ACADEMY サロン内観"
+                        className="w-full h-auto"
+                    />
+                </div>
+
+                {/* テキスト: ダーク背景上に配置（画像と重ねない） */}
+                <div className="bg-gradient-to-b from-charcoal-800 to-charcoal-900 px-6 py-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <div className="bg-white rounded-xl inline-block px-3 py-2 mb-4 border border-gold-200 shadow-lg">
+                            <img
+                                src="/logos/maki-salon-logo.png"
+                                alt="DETOX SALON MAKI ロゴ"
+                                className="h-14 w-auto"
+                            />
+                        </div>
+                        <span className="inline-block bg-cream-100 border border-gold-300 text-gold-700 text-[10px] tracking-[0.2em] px-3 py-1.5 rounded-full mb-6">
+                            MAKI ACADEMY
+                        </span>
+                        <h1 className="text-2xl font-serif text-white mb-6 tracking-[0.04em] leading-tight whitespace-pre-line drop-shadow-lg">
+                            {hero.catchcopy}
+                        </h1>
+                        <div className="w-20 h-[2px] bg-gradient-to-r from-gold-500 via-ice-400 to-gold-500 mx-auto my-6"></div>
+                        <p className="text-sm text-white/90 font-light tracking-wider max-w-2xl mx-auto leading-relaxed whitespace-pre-line drop-shadow-md">
+                            {hero.subcopy}
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                        className="mt-8"
                     >
                         <CTAButton href={hero.ctaLink} text={hero.ctaText} variant="outline" />
                     </motion.div>

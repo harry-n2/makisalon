@@ -33,26 +33,21 @@ const Academy = () => {
                     className="absolute inset-0 w-full h-full object-cover object-center"
                 />
 
-                {/* ダークグラデーション: 上部ダーク → 下部クリア */}
-                <div className="absolute inset-0 z-[1]" style={{
-                    background: 'linear-gradient(to bottom, rgba(15,12,10,0.85) 0%, rgba(15,12,10,0.75) 20%, rgba(15,12,10,0.50) 40%, rgba(15,12,10,0.25) 55%, rgba(15,12,10,0.08) 70%, rgba(15,12,10,0) 85%, rgba(15,12,10,0) 100%)'
-                }} />
-
-                {/* テキスト: 最上段・水平中央 */}
+                {/* テキスト: 最上段・水平中央（黒テキストで視認性最大化） */}
                 <div className="relative z-[2] flex flex-col items-center text-center min-h-screen pt-[140px] px-10 max-w-[900px] mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <h1 className="text-[60px] font-serif font-bold text-white leading-[1.4] tracking-[0.05em] mb-2" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+                        <h1 className="text-[60px] font-serif font-bold text-charcoal-800 leading-[1.4] tracking-[0.05em] mb-2">
                             あなたの技術を<br />
-                            <span className="text-gold-400 font-black">「極上のブランド」へ</span>
+                            <span className="text-gold-700 font-black">「極上のブランド」へ</span>
                         </h1>
-                        <div className="w-[80px] h-[2px] bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 mx-auto my-7" />
-                        <p className="text-xl text-white/90 leading-[2] tracking-[0.06em] mb-9" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.4)' }}>
-                            23歳で月商<span className="text-gold-400 font-bold text-[22px]">270万円</span>を達成した現役サロンオーナーが、<br />
-                            月商<span className="text-gold-400 font-bold text-[22px]">100万円</span>を達成する集客メソッドを伝授
+                        <div className="w-[80px] h-[2px] bg-gradient-to-r from-gold-700 via-gold-500 to-gold-700 mx-auto my-7" />
+                        <p className="text-xl text-charcoal-700 leading-[2] tracking-[0.06em] mb-9">
+                            23歳で月商<span className="text-gold-700 font-bold text-[22px]">270万円</span>を達成した現役サロンオーナーが、<br />
+                            月商<span className="text-gold-700 font-bold text-[22px]">100万円</span>を達成する集客メソッドを伝授
                         </p>
                     </motion.div>
 

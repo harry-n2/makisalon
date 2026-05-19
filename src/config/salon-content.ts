@@ -21,6 +21,7 @@ export const salonContent = {
     ctaText: '無料診断へ進む',
     ctaLink: '#diagnostic',
     backgroundImage: '/images/hero-main.jpg',
+    backgroundImageMobile: '/images/salon header.jpg',
   },
 
   about: {

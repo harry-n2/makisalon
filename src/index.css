@@ -116,3 +116,19 @@ html {
   background-color: #B8956A;
   color: #FDFCFA;
 }
+
+/* CTA パルスグロー */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(184,134,11,0.35), 0 2px 8px rgba(0,0,0,0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(212,168,85,0.50), 0 4px 12px rgba(0,0,0,0.3);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}

@@ -67,36 +67,51 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* ─── Hero（モバイル: md未満） ─── */}
+            {/* ─── Hero（モバイル: md未満）── 集客特化型フルインパクト ─── */}
             <section className="md:hidden overflow-hidden">
-                <div className="relative w-full pt-10">
-                    {/* 画像: header_academy_mobile2.png を全体表示（オーバーレイなし） */}
+                <div className="relative w-full min-h-screen">
+                    {/* 背景画像: フルビューポート */}
                     <img
                         src="/images/header_academy_mobile2.png"
                         alt="MAKI ACADEMY ラグジュアリーサロン内観"
-                        className="w-full h-auto block"
+                        className="absolute inset-0 w-full h-full object-cover object-top"
                     />
 
-                    {/* テキスト: 画像上に半透明白パネルで配置 */}
-                    <div className="absolute inset-0 flex flex-col justify-end items-center px-5 pb-6">
+                    {/* ダークグラデーション: 上部は画像鮮明、下部はテキスト用 */}
+                    <div className="absolute inset-0 z-[1]" style={{
+                        background: 'linear-gradient(to bottom, rgba(15,12,10,0) 0%, rgba(15,12,10,0) 25%, rgba(15,12,10,0.25) 40%, rgba(15,12,10,0.65) 55%, rgba(15,12,10,0.85) 70%, rgba(15,12,10,0.95) 85%, rgba(15,12,10,1) 100%)'
+                    }} />
+
+                    {/* テキスト: 下部に大きく配置 */}
+                    <div className="relative z-[2] flex flex-col justify-end min-h-screen px-6 pb-10 pt-20">
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                            className="bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-8 text-center w-full max-w-[340px] shadow-lg"
+                            transition={{ duration: 1.2 }}
                         >
-                            <h1 className="text-2xl font-serif text-charcoal-800 mb-4 tracking-[0.04em] leading-tight whitespace-pre-line">
-                                {`あなたの技術を\n「極上のブランド」へ。`}
+                            <h1 className="text-[34px] font-serif font-bold text-white leading-[1.45] tracking-[0.03em] mb-1">
+                                あなたの技術を<br />
+                                <span className="text-gold-400 font-black">「極上のブランド」</span>へ。
                             </h1>
-                            <div className="w-16 h-[2px] bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 mx-auto my-4"></div>
-                            <p className="text-[13px] text-charcoal-600 font-light tracking-wider max-w-[280px] mx-auto leading-relaxed whitespace-pre-line mb-6">
-                                {`23歳で月商270万円を達成した現役サロンオーナーが、\n月商100万円を達成する集客メソッドを伝授。`}
+                            <div className="w-[60px] h-[2px] bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 my-5" />
+                            <p className="text-base text-white/88 leading-[1.85] tracking-[0.04em] mb-7">
+                                月商<span className="text-gold-400 font-bold text-lg">270万円</span>を達成した<br />
+                                現役サロンオーナーが、<br />
+                                月商<span className="text-gold-400 font-bold text-lg">100万円</span>の集客メソッドを伝授。
                             </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.8 }}
+                        >
                             <a
                                 href={hero.ctaLink}
-                                className="inline-flex items-center justify-center px-7 py-3 text-sm font-serif tracking-[0.12em] bg-gold-600 text-cream-50 rounded-full hover:bg-gold-500 transition-colors duration-300 shadow-md shadow-gold-700/20"
+                                className="flex items-center justify-center gap-2 w-full py-[18px] text-base font-serif font-bold tracking-[0.14em] text-white bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 rounded-full shadow-xl shadow-gold-700/30 animate-pulse-glow"
                             >
-                                {hero.ctaText}
+                                <span>✨ {hero.ctaText}</span>
+                                <span className="text-lg">→</span>
                             </a>
                         </motion.div>
                     </div>

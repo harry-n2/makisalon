@@ -69,39 +69,28 @@ const Academy = () => {
 
             {/* ─── Hero（モバイル: md未満） ─── */}
             <section className="md:hidden flex flex-col overflow-hidden">
-                {/* 画像: header_academy_mobile.png を全体表示 */}
+                {/* 画像: header_academy_mobile2.png を全体表示（オーバーレイなし） */}
                 <div className="relative w-full pt-10">
-                    <div className="absolute inset-0 bg-charcoal-900/25 z-10"></div>
                     <img
-                        src="/images/header_academy_mobile.png"
-                        alt="MAKI ACADEMY サロン内観"
+                        src="/images/header_academy_mobile2.png"
+                        alt="MAKI ACADEMY ラグジュアリーサロン内観"
                         className="w-full h-auto"
                     />
                 </div>
 
-                {/* テキスト: ダーク背景上に配置（画像と重ねない） */}
-                <div className="bg-gradient-to-b from-charcoal-800 to-charcoal-900 px-6 py-10 text-center">
+                {/* テキスト: クリーム背景上に黒字で配置 */}
+                <div className="bg-cream-50 px-6 py-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <div className="bg-white rounded-xl inline-block px-3 py-2 mb-4 border border-gold-200 shadow-lg">
-                            <img
-                                src="/logos/maki-salon-logo.png"
-                                alt="DETOX SALON MAKI ロゴ"
-                                className="h-14 w-auto"
-                            />
-                        </div>
-                        <span className="inline-block bg-cream-100 border border-gold-300 text-gold-700 text-[10px] tracking-[0.2em] px-3 py-1.5 rounded-full mb-6">
-                            MAKI ACADEMY
-                        </span>
-                        <h1 className="text-2xl font-serif text-white mb-6 tracking-[0.04em] leading-tight whitespace-pre-line drop-shadow-lg">
-                            {hero.catchcopy}
+                        <h1 className="text-2xl font-serif text-charcoal-800 mb-6 tracking-[0.04em] leading-tight whitespace-pre-line">
+                            {`あなたの技術を\n「極上のブランド」へ。`}
                         </h1>
-                        <div className="w-20 h-[2px] bg-gradient-to-r from-gold-500 via-ice-400 to-gold-500 mx-auto my-6"></div>
-                        <p className="text-sm text-white/90 font-light tracking-wider max-w-2xl mx-auto leading-relaxed whitespace-pre-line drop-shadow-md">
-                            {hero.subcopy}
+                        <div className="w-20 h-[2px] bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 mx-auto my-6"></div>
+                        <p className="text-sm text-charcoal-600 font-light tracking-wider max-w-xs mx-auto leading-relaxed whitespace-pre-line">
+                            {`23歳で月商270万円を達成した現役サロンオーナーが、\n月商100万円を達成する集客メソッドを伝授。`}
                         </p>
                     </motion.div>
 
@@ -111,7 +100,12 @@ const Academy = () => {
                         transition={{ duration: 1, delay: 0.8 }}
                         className="mt-8"
                     >
-                        <CTAButton href={hero.ctaLink} text={hero.ctaText} variant="outline" />
+                        <a
+                            href={hero.ctaLink}
+                            className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-serif tracking-[0.12em] bg-gold-600 text-cream-50 rounded-full hover:bg-gold-500 transition-colors duration-300 shadow-lg shadow-gold-700/20"
+                        >
+                            {hero.ctaText}
+                        </a>
                     </motion.div>
                 </div>
             </section>

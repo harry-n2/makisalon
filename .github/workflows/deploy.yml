@@ -22,7 +22,7 @@ jobs:
 
       - run: npm run build
         env:
-          VITE_BASE: /beautysalon/
+          VITE_BASE: /makisalon/
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

@@ -1,24 +1,9 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/common/SectionHeading';
 import CTAButton from '../components/common/CTAButton';
-import MangaViewer from '../components/common/MangaViewer';
 import { academyContent } from '../config/academy-content';
 import { assetPath } from '../utils/assetPath';
-import { academyMangaPanels } from '../config/manga-academy';
 import { BookOpen, Users, TrendingUp, Sparkles, Target, Zap } from 'lucide-react';
-
-/**
- * マンガを「scene」フィールドでセグメント分割（20コマ → 5セグメント）
- * Hero後 = 課題(1-4)  /  ターゲット後 = 介入(5-8)  /  ストーリー後 = 実績提示(9-12)
- * カリキュラム後 = 解決策(13-17)  /  CTA内 = 結び(18-20)
- */
-const mangaSegments = {
-    challenge: academyMangaPanels.filter((p) => p.scene === '課題'),      // 1-4
-    intervention: academyMangaPanels.filter((p) => p.scene === '介入'),    // 5-8
-    proof: academyMangaPanels.filter((p) => p.scene === '実績提示'),  // 9-12
-    solution: academyMangaPanels.filter((p) => p.scene === '解決策'),    // 13-17
-    closing: academyMangaPanels.filter((p) => p.scene === '結び'),      // 18-20
-};
 
 const Academy = () => {
     const { hero, story, curriculum, target, line } = academyContent;
@@ -206,12 +191,48 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* マンガ①: 課題 — 共感の導入 */}
-            <MangaViewer
-                panels={mangaSegments.challenge}
-                title="あるサロンオーナーの悩み"
-                variant="compact"
-            />
+            {/* マンガ①: 課題 — あるサロンオーナーの悩み(縦並びフル表示・スライダー廃止) */}
+            <section className="py-12 bg-cream-100 border-t border-gold-100">
+                <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
+                    {/* ヘッダー(既存 MangaViewer 踏襲) */}
+                    <div className="text-center mb-6">
+                        <h2 className="text-xs text-gold-600 tracking-[0.4em] uppercase mb-2 font-display">
+                            Manga Story
+                        </h2>
+                        <div className="w-8 h-[1px] bg-gradient-to-r from-gold-300 to-gold-500 mx-auto mb-3"></div>
+                        <h3 className="text-lg md:text-xl font-serif text-charcoal-800 tracking-widest">
+                            あるサロンオーナーの悩み
+                        </h3>
+                    </div>
+                    {/* 4画像 縦並び */}
+                    <div className="flex flex-col gap-4">
+                        <img
+                            src={assetPath('/manga/academy/section1_academy/page_1.png')}
+                            alt="一人サロンオーナーが施術台でスマホを見つめ『今月も…予約が入らない』と悩む。売上¥82,000・家賃¥150,000の家計を見て『家賃も払えない…』。"
+                            className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white"
+                            loading="lazy"
+                        />
+                        <img
+                            src={assetPath('/manga/academy/section1_academy/page_2.png')}
+                            alt="メニュー価格を下げ『もっと安くしないとお客様来ないのかな…』。壁の認定証を見上げ『技術は負けてないはずなのに…』。顔を覆い『リピートもつかない、単価も上げられない…このまま潰れるかな』。"
+                            className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white"
+                            loading="lazy"
+                        />
+                        <img
+                            src={assetPath('/manga/academy/section1_academy/page_3.png')}
+                            alt="夜PCで集客方法を検索『何が正解かわからない…』。怪しい広告群『簡単に稼げるって…ホントなの? でも怪しい…』。ベッドで泣きながら『誰か本当のこと教えて…』。"
+                            className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white"
+                            loading="lazy"
+                        />
+                        <img
+                            src={assetPath('/manga/academy/section1_academy/page_4.png')}
+                            alt="涙を拭い『頑張ってるのに売れない…私 サロン経営 向いてないのかな』。スマホでMAKI/サロン経営コンサルタント『選ばれ続ける人と消える人の決定的な違い』を発見『サロン経営17年? なんか…気になる』。"
+                            className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white"
+                            loading="lazy"
+                        />
+                    </div>
+                </div>
+            </section>
 
             {/* ─── ターゲット ─── */}
             <section className="py-24 bg-gradient-to-br from-ice-50 via-ice-100/40 to-cream-50">
@@ -242,12 +263,23 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* マンガ②: 介入 — マキとの出会い */}
-            <MangaViewer
-                panels={mangaSegments.intervention}
-                title="MAKIとの出会い"
-                variant="compact"
-            />
+            {/* マンガ②: 介入 — MAKIとの出会い(縦並びフル表示・スライダー廃止) */}
+            <section className="py-12 bg-cream-100 border-t border-gold-100">
+                <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
+                    <div className="text-center mb-6">
+                        <h2 className="text-xs text-gold-600 tracking-[0.4em] uppercase mb-2 font-display">Manga Story</h2>
+                        <div className="w-8 h-[1px] bg-gradient-to-r from-gold-300 to-gold-500 mx-auto mb-3"></div>
+                        <h3 className="text-lg md:text-xl font-serif text-charcoal-800 tracking-widest">MAKIとの出会い</h3>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <img src={assetPath('/manga/academy/section2_academy/page_5.png')} alt="リナがサロン入口で『サロン経営17年… ホンモノなのかな…』と緊張。マキが笑顔『おっ来た来た! 緊張すんなー笑 まぁ座んなよ!』と歓迎。" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section2_academy/page_6.png')} alt="リナ『リピートがつかなくて単価も3980円のまま…』。マキが『信頼で売れる仕組み』を図解。『ぶっちゃけ言うよ? 3万円受け取るのに罪悪感持ってたら— お客様に失礼だろ!』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section2_academy/page_7.png')} alt="リナ『安くしないと来てもらえないって思い込んでた…』。輝きサロンアカデミー個別セミナーでマキ『大丈夫。私もそうだった。17年やってきてわかったことがある』と寄り添う。" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section2_academy/page_8.png')} alt="マキがホワイトボードで『集客×単価×リピート=売上』『信頼で売れる仕組み』を図解。『感覚じゃダメ。仕組みがあれば一人でも安定して売れる』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section2_academy/page_9.png')} alt="マキがKindle本『選ばれ続ける人と消える人の決定的な違い』を提示『全部この本にも書いた』。リナ『学びたいです! この講座受けさせてください!』と決意。" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                    </div>
+                </div>
+            </section>
 
             {/* ─── ストーリー ─── */}
             <section className="py-24 bg-gradient-to-b from-charcoal-800 to-charcoal-900 text-white">
@@ -278,12 +310,22 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* マンガ③: 実績提示 — 証拠と信頼 */}
-            <MangaViewer
-                panels={mangaSegments.proof}
-                title="圧倒的な実績"
-                variant="compact"
-            />
+            {/* マンガ③: 実績提示 — 圧倒的な実績(縦並びフル表示・スライダー廃止) */}
+            <section className="py-12 bg-cream-100 border-t border-gold-100">
+                <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
+                    <div className="text-center mb-6">
+                        <h2 className="text-xs text-gold-600 tracking-[0.4em] uppercase mb-2 font-display">Manga Story</h2>
+                        <div className="w-8 h-[1px] bg-gradient-to-r from-gold-300 to-gold-500 mx-auto mb-3"></div>
+                        <h3 className="text-lg md:text-xl font-serif text-charcoal-800 tracking-widest">圧倒的な実績</h3>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <img src={assetPath('/manga/academy/section3_academy/page_10.png')} alt="講座Day1。マキが『一人サロン特化型集客講座』で『まず大事なのは導線設計です』と説明。図解『SNS→LINE→カウンセリング→来店→リピート、ここが9割のサロンが止まるポイント』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section3_academy/page_11.png')} alt="マキ『集客・単価・リピート、この3つが自然に整う仕組みを作る』。リナ『安売り集客してた…仕組みがなかった』。マキ&リナ『頑張るほど整う、それが信頼で売れる仕組み』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section3_academy/page_12.png')} alt="リナが学びを実践。カウンセリングシート準備・メッセージ送信・日々投稿。スマホ通知『新規予約・リピートメッセージ・いいね・お問い合わせ』。リナ『来てくれた! リピート予約も!』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section3_academy/page_13.png')} alt="マキ&リナが乾杯『おめでとう! コツコツやれば結果は出る! 感覚じゃなく仕組みで売れたろ?笑』。リナ『もっと頑張ります! 売れないを卒業した成長はまだ始まったばかり』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                    </div>
+                </div>
+            </section>
 
             {/* ─── カリキュラム ─── */}
             <section className="py-24 bg-gradient-to-br from-rose-50 via-cream-100 to-rose-100/50">
@@ -327,12 +369,22 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* マンガ④: 解決策 — 具体的な未来 */}
-            <MangaViewer
-                panels={mangaSegments.solution}
-                title="あなたのサロンが変わる"
-                variant="compact"
-            />
+            {/* マンガ④: 解決策 — あなたのサロンが変わる(縦並びフル表示・スライダー廃止) */}
+            <section className="py-12 bg-cream-100 border-t border-gold-100">
+                <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
+                    <div className="text-center mb-6">
+                        <h2 className="text-xs text-gold-600 tracking-[0.4em] uppercase mb-2 font-display">Manga Story</h2>
+                        <div className="w-8 h-[1px] bg-gradient-to-r from-gold-300 to-gold-500 mx-auto mb-3"></div>
+                        <h3 className="text-lg md:text-xl font-serif text-charcoal-800 tracking-widest">あなたのサロンが変わる</h3>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <img src={assetPath('/manga/academy/section4_academy/page_14.png')} alt="マキ若い頃『23歳で独立 最初はボロボロだった』。大人マキ『17年コツコツやった 最高月商270万円 リピーター率90%以上』の実績。" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section4_academy/page_15.png')} alt="マキがKindle本『全部この一冊にまとめた』。要点『一人でも安定して売上をつくれる/リピートが生まれる関係性/自然に集客できる仕組み』。リナ『全部リアル… 実体験だから刺さる』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section4_academy/page_16.png')} alt="マキ『頑張ってるのに売れないを卒業させたい、17年それが私の使命』。マキ&リナ夕日『サロン経営はもっと楽しく自由になれる コツコツ一緒に整えていこう』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section4_academy/page_17.png')} alt="Before/After『仕組みがあれば一人でも売れる』Before:全然予約が入らない不安/After:予約常に満席・リピーター多数・紹介で広がる。マキがウインク手差し『あなたの番だよ?』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                    </div>
+                </div>
+            </section>
 
             {/* ─── CTA ─── */}
             <section id="academy-cta" className="py-24 bg-gradient-to-b from-gold-100/60 via-cream-100 to-base-white">
@@ -357,12 +409,21 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* マンガ⑤: 結び — 成功ストーリー */}
-            <MangaViewer
-                panels={mangaSegments.closing}
-                title="成功したオーナーの声"
-                variant="compact"
-            />
+            {/* マンガ⑤: 結び — 成功したオーナーの声(縦並びフル表示・スライダー廃止) */}
+            <section className="py-12 bg-cream-100 border-t border-gold-100">
+                <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
+                    <div className="text-center mb-6">
+                        <h2 className="text-xs text-gold-600 tracking-[0.4em] uppercase mb-2 font-display">Manga Story</h2>
+                        <div className="w-8 h-[1px] bg-gradient-to-r from-gold-300 to-gold-500 mx-auto mb-3"></div>
+                        <h3 className="text-lg md:text-xl font-serif text-charcoal-800 tracking-widest">成功したオーナーの声</h3>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                        <img src={assetPath('/manga/academy/section5_academy/page_18.png')} alt="マキが講座入口で両腕広げ『悩んでる時間がもったいないよ! まず話聞きにおいでよ!』。リナがLINE予約画面を見せ『LINEで相談から始めた あの一歩で全部変わった♪』予約満席。" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section5_academy/page_19.png')} alt="装飾タイトル『想いを売上に変える 信頼で売れるサロン設計』。夕日マキ『凛として豊かで自分らしいサロン経営』。マキ親指立て『待ってるよー笑』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                        <img src={assetPath('/manga/academy/section5_academy/page_20.png')} alt="LINE公式アカウント『M beauty salon』QRコード。友だち追加で5特典(最新集客ノウハウ/予約仕組み/リピート関係/成功マインド/最新書籍電子版)。MAKI初の著書プレゼント。一人サロン特化型集客講座『頑張っているのに売れないを卒業しよう』" className="w-full h-auto rounded-sm border border-gold-100 shadow-lg bg-white" loading="lazy" />
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

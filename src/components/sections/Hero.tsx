@@ -70,17 +70,25 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.9 }}
-                    className="mt-8 flex flex-wrap gap-3 justify-center"
+                    className="mt-8 flex flex-col gap-3 items-center"
                 >
                     <a
                         href={hero.ctaLink}
-                        className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-serif tracking-[0.12em] bg-gold-600 text-cream-50 rounded-full hover:bg-gold-500 transition-colors duration-300 shadow-xl shadow-gold-700/30"
+                        className="inline-flex items-center justify-center w-full max-w-[280px] px-8 py-3.5 text-sm font-serif tracking-[0.12em] bg-gold-600 text-cream-50 rounded-full hover:bg-gold-500 transition-colors duration-300 shadow-xl shadow-gold-700/30"
                     >
                         {hero.ctaText}
                     </a>
                     <a
+                        href="https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=button&utm_campaign=service_list&utm_content=hero_center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-full max-w-[280px] px-8 py-3.5 text-sm font-serif tracking-[0.12em] bg-gradient-to-r from-gold-500 to-gold-600 text-cream-50 rounded-full shadow-xl shadow-gold-700/30 animate-pulse-glow"
+                    >
+                        サービス一覧
+                    </a>
+                    <a
                         href={salonContent.booking.url}
-                        className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-serif tracking-[0.12em] border-2 border-cream-100/40 text-cream-50 rounded-full hover:bg-cream-50/10 transition-colors duration-300"
+                        className="inline-flex items-center justify-center w-full max-w-[280px] px-8 py-3.5 text-sm font-serif tracking-[0.12em] border-2 border-cream-100/40 text-cream-50 rounded-full hover:bg-cream-50/10 transition-colors duration-300"
                     >
                         {salonContent.booking.ctaTextLong}
                     </a>
@@ -155,6 +163,14 @@ const Hero = () => {
                         className="inline-flex items-center justify-center px-10 py-4 text-sm font-serif tracking-[0.15em] bg-gold-600 text-cream-50 rounded-full hover:bg-gold-500 transition-colors duration-300 shadow-xl shadow-gold-700/30"
                     >
                         {hero.ctaText}
+                    </a>
+                    <a
+                        href="https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=button&utm_campaign=service_list&utm_content=hero_center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center px-10 py-4 text-sm font-serif tracking-[0.15em] bg-gradient-to-r from-gold-500 to-gold-600 text-cream-50 rounded-full shadow-xl shadow-gold-700/30 animate-pulse-glow"
+                    >
+                        サービス一覧
                     </a>
                     <a
                         href={salonContent.booking.url}

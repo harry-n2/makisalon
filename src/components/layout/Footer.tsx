@@ -46,6 +46,7 @@ const Footer = () => {
                     <div>
                         <h3 className="text-sm font-display tracking-[0.2em] mb-6 border-b border-charcoal-600 pb-2 inline-block text-gold-400">INFORMATION</h3>
                         <ul className="space-y-3 text-xs text-cream-300 font-light tracking-wider">
+                            <li><a href="https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=link&utm_campaign=service_list&utm_content=footer" target="_blank" rel="noopener noreferrer" className="hover:text-gold-400 transition-colors">サービス一覧</a></li>
                             <li><Link to="/law" className="hover:text-gold-400 transition-colors">特定商取引法に基づく表記</Link></li>
                             <li><Link to="/privacy" className="hover:text-gold-400 transition-colors">プライバシーポリシー</Link></li>
                             <li><Link to="/contact" className="hover:text-gold-400 transition-colors">お問い合わせフォーム</Link></li>

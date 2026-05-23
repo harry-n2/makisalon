@@ -25,9 +25,10 @@ const Header = () => {
         setIsMobileMenuOpen(false);
     }, [location]);
 
-    const salonNavLinks = [
+    const salonNavLinks: { name: string; path: string; external?: boolean }[] = [
         { name: 'HOME', path: `${base}/` },
         { name: 'ABOUT', path: `${base}/#about` },
+        { name: 'MENU', path: 'https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=nav&utm_campaign=service_list&utm_content=header_nav', external: true },
         { name: 'SERVICE', path: `${base}/#service` },
         { name: 'COMPANY', path: `${base}/#company` },
     ];
@@ -78,6 +79,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.path}
+                            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                             className={`${navTextColor} ${navHoverColor} transition-colors text-xs tracking-[0.15em] font-light`}
                         >
                             {link.name}
@@ -136,6 +138,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.path}
+                            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                             className="text-charcoal-700 hover:text-gold-600 transition-colors text-xs tracking-[0.2em] py-2 border-b border-gold-100"
                         >
                             {link.name}

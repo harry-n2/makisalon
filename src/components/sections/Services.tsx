@@ -16,6 +16,18 @@ const Services = () => {
                     dark={true}
                 />
 
+                {/* MENU ボタン(極上のメンテナンス直下・tol-app.jp 外部遷移) */}
+                <div className="flex justify-center mb-12">
+                    <a
+                        href="https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=button&utm_campaign=service_list&utm_content=after_services"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-12 py-4 text-sm font-serif tracking-[0.2em] bg-gradient-to-r from-gold-500 to-gold-600 text-cream-50 rounded-full shadow-xl shadow-gold-700/30 animate-pulse-glow"
+                    >
+                        MENU
+                    </a>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {salonContent.services.map((service, index) => (
                         <motion.div

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, BookOpen } from 'lucide-react';
 import SectionHeading from '../common/SectionHeading';
 import { salonContent } from '../../config/salon-content';
 
@@ -75,6 +75,15 @@ const InstagramFeed = () => {
                         >
                             <MessageCircle size={18} />
                             <span className="font-serif tracking-widest text-sm">公式ライン</span>
+                        </a>
+                        <a
+                            href="https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=button&utm_campaign=service_list&utm_content=instagram_section"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-cream-50 rounded-full shadow-2xl shadow-gold-700/20 transition-all duration-300 hover:scale-105"
+                        >
+                            <BookOpen size={18} />
+                            <span className="font-serif tracking-widest text-sm">MENU</span>
                         </a>
                     </div>
                     <p className="mt-4 text-xs font-light text-charcoal-600 tracking-widest">

@@ -7,7 +7,7 @@ const InstagramFeed = () => {
     const { instagram, line } = salonContent;
 
     return (
-        <section className="py-24 bg-cream-50 relative overflow-hidden">
+        <section id="gallery" className="py-24 bg-cream-50 relative overflow-hidden">
             <div className="absolute inset-0 z-0 opacity-5">
                 <div className="w-full h-full bg-gradient-to-br from-cream-200/30 to-rose-50/20"></div>
             </div>

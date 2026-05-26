@@ -30,6 +30,7 @@ const Header = () => {
         { name: 'ABOUT', path: `${base}/#about` },
         { name: 'MENU', path: 'https://tol-app.jp/s/detxsalon-maki?utm_source=lp&utm_medium=nav&utm_campaign=service_list&utm_content=header_nav', external: true },
         { name: 'SERVICE', path: `${base}/#service` },
+        { name: 'GALLERY', path: `${base}/#gallery` },
         { name: 'COMPANY', path: `${base}/#company` },
     ];
 

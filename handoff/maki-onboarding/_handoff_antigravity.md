@@ -194,3 +194,40 @@ Step 4 [Terminal]  git add → commit → push
 - **PR作成URL**: https://github.com/harry-n2/makisalon/pull/new/feature/maki-onboarding-docs
 - **本番URL**: https://makisalon.vercel.app/
 - **Vercel Dashboard**: https://vercel.com/dashboard → `beautysalon` プロジェクト
+
+---
+
+## 11. 2026-05-26 LP編集セッション完了サマリー（追記）
+
+### 累積 main commit
+```
+e95880a docs(handoff): プレイブック追加・引継書追記
+f1380c4 Merge feature/maki-onboarding-docs
+d51d611 fix(about): スマホで見出しと画像間の余白を削減
+cc161d3 feat(about): スマホで見出しを画像上に移動
+8bbeb94 fix(company): スマホで Company-Footer 間の余白削減
+65e1c40 feat(nav): Header GALLERY 追加・#gallery 遷移
+c0b4607 fix(instagram-gallery): 4画像をrepoに追加・モバイル縦1列
+7f2c522 Merge: Instagram/Gallery 4画像・電話番号直通
+899aafd feat: Instagram/Gallery 4画像横一列・電話番号直通追加
+```
+
+### 完了した主な変更
+1. Instagram/Gallery セクション 3→4画像差替（PC横一列 / モバイル縦1列）
+2. 電話番号に直通モバイル（08041820727）追加 + 注意書き
+3. Header に GALLERY ナビボタン追加（InstagramFeed に `id="gallery"`）
+4. About スマホ専用見出しを画像の上に移動・余白削減
+5. Company スマホ余白削減（地図 min-h レスポンシブ化）
+6. SectionHeading に marginBottomClass props 追加（後方互換）
+7. マキ向け運用マニュアル + AI引継書3本 + プレイブック追加
+
+### 必読: 落とし穴集
+**作業開始前に `handoff/maki-onboarding/06_LP編集プレイブック.md` を必ず読む**。
+- #1 公開アセット git追跡漏れ → 本番404事故
+- #2 min-h 固定でモバイル巨大空白
+- #3 共通コンポーネント変更で他箇所影響
+
+### Antigravity 固有の Tips
+- Browser操作で実本番（https://makisalon.vercel.app/）の動作確認を Request Review 経由で実施推奨
+- Vercel Dashboard でデプロイ Ready 確認も Browser 経由で可
+- ローカル dev server (npm run dev) は Terminal で起動・Artifact Review でスクショ確認

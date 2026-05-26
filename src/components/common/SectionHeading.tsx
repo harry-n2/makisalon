@@ -6,16 +6,17 @@ interface SectionHeadingProps {
   description?: string;
   align?: 'center' | 'left';
   dark?: boolean;
+  marginBottomClass?: string;
 }
 
-const SectionHeading = ({ label, heading, description, align = 'center', dark = false }: SectionHeadingProps) => {
+const SectionHeading = ({ label, heading, description, align = 'center', dark = false, marginBottomClass = 'mb-14' }: SectionHeadingProps) => {
   const textAlign = align === 'center' ? 'text-center' : 'text-left';
   const labelColor = dark ? 'text-ice-300' : 'text-gold-600';
   const headingColor = dark ? 'text-cream-50' : 'text-charcoal-800';
   const descColor = dark ? 'text-cream-200' : 'text-charcoal-700';
 
   return (
-    <div className={`${textAlign} mb-14`}>
+    <div className={`${textAlign} ${marginBottomClass}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

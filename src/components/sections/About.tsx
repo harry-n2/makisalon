@@ -12,8 +12,8 @@ const About = () => {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold-100/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-16">
-                    {/* モバイル専用: 見出しを画像の上に表示 */}
+                <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16">
+                    {/* モバイル専用: 見出しを画像の上に表示（余白タイトに）*/}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ const About = () => {
                         transition={{ duration: 1 }}
                         className="lg:hidden w-full"
                     >
-                        <SectionHeading label={about.label} heading={about.heading} align="left" dark={false} />
+                        <SectionHeading label={about.label} heading={about.heading} align="left" dark={false} marginBottomClass="mb-2" />
                     </motion.div>
 
                     <motion.div

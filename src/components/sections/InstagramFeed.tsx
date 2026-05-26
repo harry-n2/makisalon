@@ -19,7 +19,7 @@ const InstagramFeed = () => {
                     description="数多くの実績と確かな技術。日々の変化やリアルな施術風景はInstagramでも公開中。"
                 />
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-16 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-6 mb-16 max-w-7xl mx-auto">
                     {instagram.images.map((src, index) => (
                         <motion.div
                             key={index}

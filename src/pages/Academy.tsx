@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/common/SectionHeading';
 import CTAButton from '../components/common/CTAButton';
+import LineIcon from '../components/common/LineIcon';
 import { academyContent } from '../config/academy-content';
 import { assetPath } from '../utils/assetPath';
 import { BookOpen, Users, TrendingUp, Sparkles, Target, Zap } from 'lucide-react';
@@ -88,10 +89,13 @@ const Academy = () => {
                     >
                         <a
                             href={hero.ctaLink}
-                            className="inline-flex items-center justify-center gap-2.5 px-14 py-[18px] text-[16px] font-serif font-semibold tracking-[0.14em] text-white rounded-full shadow-lg animate-pulse-glow transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
-                            style={{ background: 'linear-gradient(135deg, #A07C4E, #B8956A)', boxShadow: '0 6px 24px rgba(184,149,106,0.30)' }}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2.5 px-14 py-[18px] text-[16px] font-serif font-semibold tracking-[0.14em] text-white rounded-full shadow-xl animate-pulse-glow transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
+                            style={{ background: 'linear-gradient(135deg, #05B14C, #06C755)', boxShadow: '0 8px 28px rgba(6,199,85,0.45), 0 0 0 2px rgba(255,255,255,0.6)' }}
                         >
-                            <span>✨ {hero.ctaText}</span>
+                            <LineIcon size={20} />
+                            <span>{hero.ctaText}</span>
                             <span className="text-lg">→</span>
                         </a>
                     </motion.div>
@@ -180,10 +184,13 @@ const Academy = () => {
                         >
                             <a
                                 href={hero.ctaLink}
-                                className="flex items-center justify-center gap-2 w-full py-[16px] text-[15px] font-serif font-bold tracking-[0.14em] rounded-full shadow-lg animate-pulse-glow"
-                                style={{ background: 'linear-gradient(135deg, #8B6914, #A07C4E)', boxShadow: '0 6px 24px rgba(140,105,20,0.35)', color: '#FFFEF8', textShadow: '0 1px 3px rgba(100,70,10,0.4)' }}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2 w-full py-[16px] text-[15px] font-serif font-bold tracking-[0.14em] rounded-full shadow-xl animate-pulse-glow"
+                                style={{ background: 'linear-gradient(135deg, #05B14C, #06C755)', boxShadow: '0 8px 28px rgba(6,199,85,0.45), 0 0 0 2px rgba(255,255,255,0.6)', color: '#FFFFFF' }}
                             >
-                                <span>✨ {hero.ctaText}</span>
+                                <LineIcon size={18} />
+                                <span>{hero.ctaText}</span>
                                 <span className="text-lg">→</span>
                             </a>
                         </motion.div>

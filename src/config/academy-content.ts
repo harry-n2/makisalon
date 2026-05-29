@@ -17,8 +17,8 @@ export const academyContent = {
     catchcopy: '営業25年の実績 ×\n集客＆マーケティング',
     subcopy:
       '23歳で月商270万円を達成した現役サロンオーナーが、\n最新のAI自動集客メソッドを伝授。',
-    ctaText: '無料個別相談に申し込む',
-    ctaLink: '#academy-cta',
+    ctaText: '無料相談に申し込む',
+    ctaLink: 'https://line.me/R/ti/p/@335pckre?ts=01031548&oat_content=url',
   },
 
   story: {

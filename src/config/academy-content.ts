@@ -75,8 +75,28 @@ export const academyContent = {
   },
 
   line: {
-    url: 'https://lin.ee/hZjjsCT', // 講座用LINE（店舗と共通。別URLがあれば差替え）
-    qrImage: '/qr/line-academy.png',
+    url: 'https://line.me/R/ti/p/@335pckre?ts=01031548&oat_content=url',
+    qrImage: '/qr/line-academy-maki.png',
     ctaText: '無料個別相談に申し込む',
   },
+
+  instagram: {
+    url: 'https://www.instagram.com/aisare_salon/',
+    qrImage: '/qr/insta-academy-maki.png',
+  },
+
+  headerCta: {
+    text: '無料相談に申し込む',
+    url: 'https://line.me/R/ti/p/@335pckre?ts=01031548&oat_content=url',
+  },
+
+  nav: [
+    { name: 'HOME', hash: '' },
+    { name: 'STORY', hash: '#academy-pain' },
+    { name: 'お悩み', hash: '#academy-target' },
+    { name: '実績', hash: '#academy-achievement' },
+    { name: 'CURRICULUM', hash: '#academy-curriculum' },
+    { name: 'VOICE', hash: '#academy-voice' },
+    { name: 'CONTACT', hash: '#academy-cta' },
+  ],
 } as const;

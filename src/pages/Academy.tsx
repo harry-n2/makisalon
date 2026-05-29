@@ -192,7 +192,7 @@ const Academy = () => {
             </section>
 
             {/* マンガ①: 課題 — あるサロンオーナーの悩み(縦並びフル表示・スライダー廃止) */}
-            <section className="py-12 bg-cream-100 border-t border-gold-100">
+            <section id="academy-pain" className="scroll-mt-20 py-12 bg-cream-100 border-t border-gold-100">
                 <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
                     {/* ヘッダー(既存 MangaViewer 踏襲) */}
                     <div className="text-center mb-6">
@@ -235,7 +235,7 @@ const Academy = () => {
             </section>
 
             {/* ─── ターゲット ─── */}
-            <section className="py-24 bg-gradient-to-br from-ice-50 via-ice-100/40 to-cream-50">
+            <section id="academy-target" className="scroll-mt-20 py-24 bg-gradient-to-br from-ice-50 via-ice-100/40 to-cream-50">
                 <div className="container mx-auto px-6 lg:px-12 max-w-5xl">
                     <SectionHeading
                         label="Who is this for?"
@@ -281,8 +281,8 @@ const Academy = () => {
                 </div>
             </section>
 
-            {/* ─── ストーリー ─── */}
-            <section className="py-24 bg-gradient-to-b from-charcoal-800 to-charcoal-900 text-white">
+            {/* ─── ストーリー（マキ実績） ─── */}
+            <section id="academy-achievement" className="scroll-mt-20 py-24 bg-gradient-to-b from-charcoal-800 to-charcoal-900 text-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
                     <SectionHeading label="Story" heading={story.heading} dark />
                     <div className="space-y-6 text-cream-200 font-light leading-relaxed tracking-wider text-sm md:text-base">
@@ -328,7 +328,7 @@ const Academy = () => {
             </section>
 
             {/* ─── カリキュラム ─── */}
-            <section className="py-24 bg-gradient-to-br from-rose-50 via-cream-100 to-rose-100/50">
+            <section id="academy-curriculum" className="scroll-mt-20 py-24 bg-gradient-to-br from-rose-50 via-cream-100 to-rose-100/50">
                 <div className="container mx-auto px-6 lg:px-12 max-w-5xl">
                     <SectionHeading label="Curriculum" heading="3ヶ月で変わるサロン経営" />
                     <div className="space-y-12 mt-12">
@@ -387,7 +387,7 @@ const Academy = () => {
             </section>
 
             {/* ─── CTA ─── */}
-            <section id="academy-cta" className="py-24 bg-gradient-to-b from-gold-100/60 via-cream-100 to-base-white">
+            <section id="academy-cta" className="scroll-mt-20 py-24 bg-gradient-to-b from-gold-100/60 via-cream-100 to-base-white">
                 <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -410,7 +410,7 @@ const Academy = () => {
             </section>
 
             {/* マンガ⑤: 結び — 成功したオーナーの声(縦並びフル表示・スライダー廃止) */}
-            <section className="py-12 bg-cream-100 border-t border-gold-100">
+            <section id="academy-voice" className="scroll-mt-20 py-12 bg-cream-100 border-t border-gold-100">
                 <div className="container mx-auto px-6 lg:px-12 max-w-2xl">
                     <div className="text-center mb-6">
                         <h2 className="text-xs text-gold-600 tracking-[0.4em] uppercase mb-2 font-display">Manga Story</h2>

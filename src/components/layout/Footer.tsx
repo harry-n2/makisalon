@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { CalendarCheck } from 'lucide-react';
 import { companyInfo } from '../../config/company';
 import { salonContent } from '../../config/salon-content';
+import { academyContent } from '../../config/academy-content';
 import { assetPath } from '../../utils/assetPath';
 import QRBlock from '../common/QRBlock';
 
 const Footer = () => {
+    const location = useLocation();
+    const isAcademy = location.pathname.startsWith('/academy');
+
     return (
         <footer className="bg-charcoal-800 text-cream-100 pt-16 pb-8 border-t border-charcoal-700">
             <div className="container mx-auto px-6 lg:px-12">
@@ -51,27 +55,52 @@ const Footer = () => {
                             <li><Link to="/law" className="hover:text-gold-400 transition-colors">特定商取引法に基づく表記</Link></li>
                             <li><Link to="/privacy" className="hover:text-gold-400 transition-colors">プライバシーポリシー</Link></li>
                             <li><Link to="/contact" className="hover:text-gold-400 transition-colors">お問い合わせフォーム</Link></li>
-                            <li><Link to="/academy" className="hover:text-gold-300 transition-colors">📚 一人サロン集客講座</Link></li>
+                            {isAcademy ? (
+                                <li><Link to="/" className="hover:text-gold-300 transition-colors">デトックスサロンMAKI</Link></li>
+                            ) : (
+                                <li><Link to="/academy" className="hover:text-gold-300 transition-colors">📚 一人サロン集客講座</Link></li>
+                            )}
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="text-sm font-display tracking-[0.2em] mb-6 border-b border-charcoal-600 pb-2 inline-block text-gold-400">CONNECT</h3>
                         <div className="flex flex-col gap-4">
-                            <QRBlock
-                                qrImage={salonContent.line.qrImage}
-                                label="公式LINE"
-                                linkUrl={salonContent.line.url}
-                                linkText="友だち追加"
-                                size="sm"
-                            />
-                            <QRBlock
-                                qrImage={salonContent.instagram.qrImage}
-                                label="Instagram"
-                                linkUrl={salonContent.instagram.url}
-                                linkText="フォローする"
-                                size="sm"
-                            />
+                            {isAcademy ? (
+                                <>
+                                    <QRBlock
+                                        qrImage={academyContent.line.qrImage}
+                                        label="公式LINE"
+                                        linkUrl=""
+                                        size="sm"
+                                        noLink
+                                    />
+                                    <QRBlock
+                                        qrImage={academyContent.instagram.qrImage}
+                                        label="Instagram"
+                                        linkUrl={academyContent.instagram.url}
+                                        linkText="フォローする"
+                                        size="sm"
+                                    />
+                                </>
+                            ) : (
+                                <>
+                                    <QRBlock
+                                        qrImage={salonContent.line.qrImage}
+                                        label="公式LINE"
+                                        linkUrl={salonContent.line.url}
+                                        linkText="友だち追加"
+                                        size="sm"
+                                    />
+                                    <QRBlock
+                                        qrImage={salonContent.instagram.qrImage}
+                                        label="Instagram"
+                                        linkUrl={salonContent.instagram.url}
+                                        linkText="フォローする"
+                                        size="sm"
+                                    />
+                                </>
+                            )}
                         </div>
                     </div>
 
